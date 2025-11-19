@@ -11,6 +11,7 @@ async def relay(request):
     except ConnectionClosed: pass
     finally: clients.remove(web_socket)
 
-async def main(): await serve_websocket(relay, '0.0.0.0', PORT)
+async def main(): await serve_websocket(relay, '0.0.0.0', PORT, ssl_context=None)
 
 trio.run(main)
+
