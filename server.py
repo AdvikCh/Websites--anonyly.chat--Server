@@ -14,5 +14,3 @@ async def relay(request):
 async def main(): await serve_websocket(relay, '0.0.0.0', PORT, ssl_context=None)
 
 trio.run(main)
-
-
